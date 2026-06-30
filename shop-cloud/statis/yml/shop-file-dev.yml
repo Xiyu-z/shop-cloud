@@ -1,0 +1,23 @@
+# 文件大小控制
+spring:
+  servlet:
+    multipart:
+      #设置单个文件的大小
+      max-file-size: 100MB
+      #设置单次请求的所有文件的大小
+      max-request-size: 100MB
+
+# 本地文件上传
+file:
+  mac:
+    path: ~/file/
+    avatar: ~/avatar/
+  linux:
+    path: /home/dada/file/
+    avatar: /home/dada/avatar/
+  windows:
+    path: D:/dada/file/
+    avatar: D:/dada/file/
+  # 文件大小 /M
+  maxSize: 100
+  avatarMaxSize: 5

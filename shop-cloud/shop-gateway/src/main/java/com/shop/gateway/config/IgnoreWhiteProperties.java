@@ -1,0 +1,32 @@
+package com.shop.gateway.config;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.context.annotation.Configuration;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * @Author: dada
+ * @Date: 2024/7/10 22:48
+ * @Version: 1.0
+ * @Description:
+ */
+@Configuration
+@RefreshScope //读取配置文件动态刷新
+@ConfigurationProperties(prefix = "security.ignore")
+public class IgnoreWhiteProperties {
+    /**
+     * 放行白名单配置，网关不校验此处的白名单
+     */
+    private List<String> whites = new ArrayList<>();
+
+    public List<String> getWhites() {
+        return whites;
+    }
+
+    public void setWhites(List<String> whites) {
+        this.whites = whites;
+    }
+}

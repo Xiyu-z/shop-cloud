@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.shop</groupId>
+    <artifactId>shop-cloud</artifactId>
+    <packaging>pom</packaging>
+
+    <!--子服务模块-->
+    <modules>
+        <module>shop-modules</module>
+        <module>shop-common</module>
+        <module>shop-api</module>
+        <module>shop-auto</module>
+        <module>shop-gateway</module>
+    </modules>
+
+    <version>1.0</version>
+
+    <name>shop</name>
+    <url>https://www.itzd.cn</url>
+    <description>哒哒开发平台</description>
+
+    <!--版本管理-->
+    <properties>
+        <dada.version>1.0</dada.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <spring-boot.version>2.7.3</spring-boot.version>
+        <spring-cloud.version>2021.0.3</spring-cloud.version>
+        <spring-cloud-alibaba.version>2021.0.1.0</spring-cloud-alibaba.version>
+        <alibaba.nacos.version>2.0.4</alibaba.nacos.version>
+        <alibaba.seata.version>1.5.1</alibaba.seata.version>
+        <fastjson.version>2.0.16</fastjson.version>
+        <swagger.fox.version>3.0.0</swagger.fox.version>
+        <swagger.core.version>1.6.2</swagger.core.version>
+        <lombok.version>1.18.24</lombok.version>
+        <jjwt.version>0.9.1</jjwt.version>
+        <spring-boot.mybatis-plus>3.5.1</spring-boot.mybatis-plus>
+        <pagehelper.boot.version>1.4.3</pagehelper.boot.version>
+        <transmittable-thread-local.version>2.13.2</transmittable-thread-local.version>
+        <druid.version>1.2.14</druid.version>
+        <dynamic-ds.version>3.5.1</dynamic-ds.version>
+        <joda.time>2.10.10</joda.time>
+        <hutool.version>5.8.1</hutool.version>
+        <freemarker.version>2.3.31</freemarker.version>
+        <oshi.version>6.2.2</oshi.version>
+        <okhttp.version>11.8 </okhttp.version>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- 依赖声明 -->
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- SpringBoot 依赖配置 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- SpringCloud 微服务 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- SpringCloud Alibaba 微服务 -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Alibaba Nacos 配置 -->
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-client</artifactId>
+                <version>${alibaba.nacos.version}</version>
+            </dependency>
+
+            <!-- Alibaba Seata 配置 -->
+            <dependency>
+                <groupId>io.seata</groupId>
+                <artifactId>seata-spring-boot-starter</artifactId>
+                <version>${alibaba.seata.version}</version>
+            </dependency>
+
+            <!-- Swagger 依赖配置 -->
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-models</artifactId>
+                <version>${swagger.core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger.core.version}</version>
+            </dependency>
+
+            <!-- JSON 解析器和生成器 -->
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!--lombok的 get  set 和日志-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!-- JWT -->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+
+            <!--devtools 热部署依赖 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-devtools</artifactId>
+                <scope>runtime</scope>
+                <!--optional 表示依赖是否向下传递 true表示不向下传递  默认值是false向下传递 -->
+                <optional>true</optional>
+            </dependency>
+
+            <!-- 线程传递值 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>transmittable-thread-local</artifactId>
+                <version>${transmittable-thread-local.version}</version>
+            </dependency>
+
+            <!-- Mybatis 依赖配置 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${spring-boot.mybatis-plus}</version>
+            </dependency>
+
+            <!-- pagehelper 分页插件 -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper.boot.version}</version>
+            </dependency>
+
+
+            <!--日期格式的转换-->
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>${joda.time}</version>
+            </dependency>
+
+            <!--Hutool工具包-->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+            <!-- 解决openfeign远程调用特殊字符的处理 -->
+            <dependency>
+                <groupId>io.github.openfeign</groupId>
+                <artifactId>feign-okhttp</artifactId>
+                <version>${okhttp.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-amqp</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.shop</groupId>
+                <artifactId>shop-common-security</artifactId>
+                <version>1.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.shop</groupId>
+                <artifactId>shop-common-redis</artifactId>
+                <version>1.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.shop</groupId>
+                <artifactId>shop-common-core</artifactId>
+                <version>1.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.shop</groupId>
+                <artifactId>shop-api-user</artifactId>
+                <version>1.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.shop</groupId>
+                <artifactId>shop-api-logs</artifactId>
+                <version>1.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.shop</groupId>
+                <artifactId>shop-api-goods</artifactId>
+                <version>1.0</version>
+            </dependency>
+        </dependencies>
+
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- bootstrap 启动器 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.7.3</version>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

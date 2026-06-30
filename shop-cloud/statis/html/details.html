@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品详情 - 商品名称</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            flex-direction: column;
+            min-height: 100vh;
+            display: flex;
+        }
+
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: rgb(11, 169, 232);
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 80px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: right;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        nav ul li:first-child {
+            margin-left: 0;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+
+        .product-details {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .product-gallery {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .product-gallery img {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .product-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .product-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            color: #007bff;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-description {
+            margin-bottom: 20px;
+        }
+
+        .product-description p {
+            line-height: 1.8;
+        }
+
+        .product-attributes {
+            margin-top: auto;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .product-attributes h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .product-attributes ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .product-attributes ul li {
+            margin-bottom: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            margin-top: auto;
+            /*position: sticky;*/
+            /*bottom: 0;*/
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="./static/img.png" alt="环保商城">
+                <span>环保商城</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">分类</a></li>
+                    <li><a href="#">购物车</a></li>
+                    <li><a href="#">我的订单</a></li>
+                    <li><a href="#">地址管理</a></li>
+                    <li><a href="#">登录</a></li>
+                    <li><a href="#">注册</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <section class="product-details">
+        <div class="product-gallery">
+            <img src="https://via.placeholder.com/400x300" alt="商品图片">
+        </div>
+
+        <div class="product-info">
+            <h2 class="product-title">商品名称</h2>
+            <p class="product-price">￥200.00</p>
+            <div class="product-description">
+                <p>这里是商品的详细描述，包括特征、优势和用途。</p>
+                <p>可以根据实际需要添加更多描述内容。</p>
+            </div>
+
+            <div class="product-attributes">
+                <h3>商品属性</h3>
+                <ul>
+                    <li><strong>颜色:</strong> 绿色</li>
+                    <li><strong>尺寸:</strong> 大号</li>
+                    <li><strong>材质:</strong> 纯棉</li>
+                </ul>
+            </div>
+            <a href="#" class="btn">加入购物车</a>
+
+        </div>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 环保商城. 版权所有.</p>
+    </div>
+</footer>
+</body>
+</html>

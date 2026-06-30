@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>环保商城</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+
+        .search-form input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px;
+            width: 70%;
+        }
+
+        .search-form button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+
+        .search-form button:hover {
+            background-color: #0056b3;
+        }
+
+        .header {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        header {
+            background-color: rgb(11, 169, 232);
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 80px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: right;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        nav ul li:first-child {
+            margin-left: 0;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+
+        .hero h2 {
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+
+        .product-list .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product h3 {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .product p {
+            color: #007bff;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 5px;
+        }
+        .cart {
+            margin-top: 20px;
+        }
+
+        .cart table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            margin-bottom: 20px;
+            border-radius: 20px;
+        }
+
+        .cart table th,
+        .cart table td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .cart table th {
+            background-color: #499bf1;
+            color: #fff;
+        }
+
+        .cart table td img {
+            max-width: 80px;
+            height: auto;
+            vertical-align: middle;
+        }
+
+        .cart table td h4 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .cart table td p {
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .cart .total {
+            text-align: right;
+        }
+
+        .cart .total p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .continue-shopping {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .continue-shopping:hover {
+            background-color: #45a049;
+        }
+
+        .checkout {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+
+        .checkout:hover {
+            background-color: #0073e6;
+        }
+        .delete-btn {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .delete-btn:hover {
+            background-color: #c82333;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto;
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <div class="header">
+        <div class="logo">
+            <img src="./static/img.png" alt="环保商城">
+            <span>环保商城</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">分类</a></li>
+                <li><a href="#">购物车</a></li>
+                <li><a href="#">我的订单</a></li>
+                <li><a href="#">地址管理</a></li>
+                <li><a href="#">登录</a></li>
+                <li><a href="#">注册</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+    <section class="cart">
+        <h2>我的购物车</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>商品</th>
+                <th>商品名称</th>
+                <th>单价</th>
+                <th>数量</th>
+                <th>小计</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><img src="https://via.placeholder.com/80" alt="商品图"></td>
+                <td><h4>商品名称1</h4></td>
+                <td><p>￥100.00</p></td>
+                <td>2</td>
+                <td><p>￥200.00</p></td>
+                <td><a href="#" class="delete-btn">删除</a></td>
+            </tr>
+            <tr>
+                <td><img src="https://via.placeholder.com/80" alt="商品图"></td>
+                <td><h4>商品名称2</h4></td>
+                <td><p>￥120.00</p></td>
+                <td>1</td>
+                <td><p>￥120.00</p></td>
+                <td><a href="#" class="delete-btn">删除</a></td>
+            </tr>
+            <tr>
+                <td><img src="https://via.placeholder.com/80" alt="商品图"></td>
+                <td><h4>商品名称3</h4></td>
+                <td><p>￥80.00</p></td>
+                <td>3</td>
+                <td><p>￥240.00</p></td>
+                <td><a href="#" class="delete-btn">删除</a></td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="5" class="total">总计：</td>
+                <td><p>￥560.00</p></td>
+            </tr>
+            </tfoot>
+        </table>
+        <button class="continue-shopping">继续购物</button>
+        <button class="checkout">结算</button>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 环保商城. 版权所有.</p>
+    </div>
+</footer>
+</body>
+</html>
