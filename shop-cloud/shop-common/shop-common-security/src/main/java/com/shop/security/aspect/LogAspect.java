@@ -1,7 +1,7 @@
 package com.shop.security.aspect;
 
 import com.shop.core.domain.entity.SysLogs;
-import com.shop.logs.logs.ApiLogsService;
+import com.shop.goods.logs.ApiLogsService;
 import com.shop.security.utils.SecurityUtils;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;

@@ -18,6 +18,8 @@
         <module>shop-modules-order</module>
         <module>shop-modules-goods</module>
         <module>shop-modules-logs</module>
+        <module>xaw168-modules-order</module>
+        <module>xaw168-modules-goods</module>
     </modules>
 
 </project>
